@@ -57,6 +57,11 @@ pub extern "C" fn _start() -> ! {
     main_loop()
 }
 
+#[no_mangle]
+pub extern "C" fn rust_main() -> ! {
+    _start()
+}
+
 fn main_loop() -> ! {
     loop {
         unsafe {
@@ -176,11 +181,11 @@ pub fn wait_cycles(cycles: u64) {
 }
 
 pub fn kernel_version() -> &'static str {
-    "0.1.0"
+    "V"
 }
 
 pub fn kernel_name() -> &'static str {
-    "RustOS"
+    "Masika"
 }
 
 pub fn print_welcome_message() {
