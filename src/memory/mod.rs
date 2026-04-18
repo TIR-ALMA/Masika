@@ -36,3 +36,10 @@ pub trait FrameAllocator {
     fn dealloc_frame(&mut self, page: Page);
 }
 
+pub fn init() {
+    // Инициализация памяти
+    physical::init();
+    virtual_memory::init();
+    heap::init();
+}
+
