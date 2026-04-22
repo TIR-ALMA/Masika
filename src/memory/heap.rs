@@ -185,6 +185,11 @@ unsafe impl GlobalAlloc for Heap {
 #[global_allocator]
 static mut ALLOCATOR: Heap = Heap::new();
 
+pub fn init() {
+    // Placeholder initialization function
+    // Actual initialization should be done with specific memory region
+}
+
 pub fn init_heap(start: usize, size: usize) {
     unsafe {
         ALLOCATOR.init(start, size);
