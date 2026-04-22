@@ -27,6 +27,11 @@ impl PhysicalMemoryManager {
         }
     }
 
+    pub fn init() -> Self {
+        // Initialize with default values, requires external configuration of memory parameters
+        PhysicalMemoryManager::new(0, 0)
+    }
+
     fn get_bit(&self, frame: usize) -> bool {
         if frame >= self.total_frames { return false; }
         let word_index = frame >> 6;
@@ -612,6 +617,3 @@ impl PhysicalMemoryManager {
             }
         }
         (free_blocks, self.get_free_frames())
-    }
-}
-
