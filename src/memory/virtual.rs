@@ -26,6 +26,10 @@ pub enum VmmError {
     RangeOverlap,
 }
 
+pub fn init() {
+    // Initialization logic here
+}
+
 impl VirtualMemoryManager {
     pub fn new() -> Self {
         let pml4_frame = alloc_pages(1).unwrap();
@@ -597,3 +601,4 @@ impl VirtAddr {
         VirtAddr((self.0 + align - 1) & !(align - 1))
     }
 }
+
